@@ -1,2 +1,2 @@
 # PCA_sentiment_factor
-a empirical method to estimation reverse effect
+an empirical method to estimate A-share stock reverse effect

@@ -1,0 +1,53 @@
+# Publish only the subset needed for the PCA sentiment analysis section.
+/*
+!/.gitignore
+!/README.md
+!/LICENSE
+!/requirements.txt
+!/code/
+!/scripts/
+!/aggregateData/
+!/docs/
+
+# Keep only selected source files
+code/*
+!code/Get_PCAMS.py
+!code/Baseline.py
+!code/Robust.py
+!code/Stats.py
+!code/heterogeneity.py
+!code/mediation_bootstrap.py
+!code/README.md
+
+# Keep only the workflow entry point
+scripts/*
+!scripts/run_pipeline.py
+
+# Keep only the data needed for this subset
+aggregateData/*
+!aggregateData/README.md
+!aggregateData/*.csv
+!aggregateData/*.png
+aggregateData/*.xlsx
+
+# Keep docs for publication notes
+docs/*
+!docs/DATA_LAYOUT.md
+!docs/OPEN_SOURCE_RELEASE_CHECKLIST.md
+
+# Editor and cache files
+.vscode/
+.idea/
+.pytest_cache/
+**/__pycache__/
+*.pyc
+*.pyo
+*.tmp
+~$*
+
+# Root-level personal materials and local office exports
+/*.docx
+/*.pdf
+/*.pptx
+/*.png
+/*.jpg

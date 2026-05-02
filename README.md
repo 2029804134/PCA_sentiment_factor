@@ -1,6 +1,9 @@
 # PCA Sentiment Analysis Repository
 
-This repository is a trimmed public release for the PCA-based market sentiment analysis section of the thesis. It includes only the code and data needed for:
+This repository provides an empirical workflow (like skills) for estimating A-share stock
+reversal effects with PCA-based market sentiment factors. It is a trimmed public
+release for the PCA-based market sentiment analysis section of the thesis and
+includes only the code and public outputs needed for:
 
 - building `PCAMS` and `exPCAMS`;
 - running CSI 300 and CSI All Share baseline regressions;
@@ -16,7 +19,7 @@ The repository is published under the MIT License.
   Standardizes the core sentiment proxies, runs PCA, and writes `PCAMS` and `exPCAMS`.
 - `code/Baseline.py`
   Runs the CSI 300 baseline regressions and exports regression tables.
-- `code/test1.py`
+- `code/Robust.py`
   Runs the CSI All Share baseline regressions and exports regression tables.
 - `code/Stats.py`
   Produces descriptive statistics, charts, and selected statistical tests.
@@ -31,7 +34,7 @@ The repository is published under the MIT License.
 
 The following datasets are required to reproduce the full analysis, but they are
 not included in this public repository because of copyright and data licensing
-restrictions:
+restrictions(or you can ask me for these by email_2029804134h@gmail.com):
 
 - `aggregateData/TS.xlsx`
   Local input dataset for `Get_PCAMS.py`.
@@ -76,7 +79,7 @@ Or run the scripts individually in this order:
 
 1. `python code/Get_PCAMS.py`
 2. `python code/Baseline.py`
-3. `python code/test1.py`
+3. `python code/Robust.py`
 4. `python code/Stats.py`
 5. `python code/heterogeneity.py`
 6. `python code/mediation_bootstrap.py`

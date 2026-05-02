@@ -90,7 +90,7 @@ def write_desc_table_word(df_300: pd.DataFrame, df_all: pd.DataFrame, out_path: 
         return
 
     # Variables: from CSI300 and only Rexcess from CSI All
-    vars_300 = ["Rexcess", "NIA", "NIPO", "CEFD", "MMSent", "PB", "PE", "Turnover_diff", "PCAMS", "exPCAMS"]
+    vars_300 = ["Rexcess", "NIA", "NIPO", "CEFP", "MMSent", "PB", "PE", "Turnover_diff", "PCAMS", "exPCAMS"]
     var_all = ["Rexcess"]
 
     # Validate columns

@@ -17,8 +17,8 @@ OUT_FILE_985 = ROOT / "TS_CSI_ALL_PCA.xlsx"
 MONTH_COL = "Month"
 INDEX_COL = "Indexcd"
 
-X_COLS_FULL = ["Turnover_diff", "NIA", "NIPO", "MMSentlag", "CEFD"]
-X_COLS_EX = ["Turnover_diff", "NIA", "NIPO", "CEFD"]
+X_COLS_FULL = ["Turnover_diff", "NIA", "NIPO", "MMSentlag", "CEFP"]
+X_COLS_EX = ["Turnover_diff", "NIA", "NIPO", "CEFP"]
 Y_COL = "Rexcess_lead1"
 VALUATION_COLS = ["PB", "PE"]
 
@@ -89,7 +89,7 @@ def run_for_index(df: pd.DataFrame, index_code: str, out_file: Path) -> None:
         sub[col] = pd.to_numeric(sub[col], errors="coerce")
 
     # Build modeling frame
-    for col in ["NIA", "NIPO", "MMSentlag", "CEFD"]:
+    for col in ["NIA", "NIPO", "MMSentlag", "CEFP"]:
         if col not in sub.columns:
             raise KeyError(f"Missing {col} column in TS.xlsx")
         sub[col] = pd.to_numeric(sub[col], errors="coerce")

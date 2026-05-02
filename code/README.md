@@ -8,7 +8,7 @@ This directory contains only the scripts used in the PCA sentiment analysis sect
   Standardizes the core sentiment proxies, runs PCA, and writes `PCAMS` and `exPCAMS`.
 - `Baseline.py`
   Runs the CSI 300 baseline regressions and exports regression tables.
-- `test1.py`
+- `Robust.py`
   Runs the CSI All Share baseline regressions and exports regression tables.
 - `Stats.py`
   Produces descriptive statistics, charts, and selected statistical tests.
@@ -21,7 +21,7 @@ This directory contains only the scripts used in the PCA sentiment analysis sect
 
 1. `Get_PCAMS.py`
 2. `Baseline.py`
-3. `test1.py`
+3. `Robust.py`
 4. `Stats.py`
 5. `heterogeneity.py`
 6. `mediation_bootstrap.py`

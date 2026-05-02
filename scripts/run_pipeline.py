@@ -14,7 +14,7 @@ BUILD_STEPS = [
 
 ANALYSIS_STEPS = [
     ("Run CSI 300 regressions", PROJECT_ROOT / "code" / "Baseline.py"),
-    ("Run CSI All regressions", PROJECT_ROOT / "code" / "test1.py"),
+    ("Run CSI All regressions", PROJECT_ROOT / "code" / "Robust.py"),
     ("Generate descriptive statistics and figures", PROJECT_ROOT / "code" / "Stats.py"),
     ("Run heterogeneity analysis", PROJECT_ROOT / "code" / "heterogeneity.py"),
     ("Run mediation bootstrap", PROJECT_ROOT / "code" / "mediation_bootstrap.py"),

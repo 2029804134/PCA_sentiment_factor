@@ -1,81 +1,101 @@
-# PCA Sentiment Analysis Repository
+<div align="center">
 
-This repository provides an empirical workflow (like skills) for estimating A-share stock
-reversal effects with PCA-based market sentiment factors. It is a trimmed public
-release for the PCA-based market sentiment analysis section of the thesis and
-includes only the code and public outputs needed for:
+# PCA 市场情绪因子与 A 股反转效应研究
 
-- building `PCAMS` and `exPCAMS`;
-- running CSI 300 and CSI All Share baseline regressions;
-- producing descriptive statistics and figures;
-- running heterogeneity regressions;
-- running the dual-mediator bootstrap analysis.
+**本科论文实证分析公开仓库 · PCA Sentiment Factor for A-share Reversal Effect**
 
-The repository is published under the MIT License.
+基于市场情绪代理变量、主成分分析和面板回归，构建 `PCAMS` 与 `exPCAMS` 情绪因子，并检验其对 A 股收益反转效应的解释能力。
 
-## Included Code
+![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&logo=python&logoColor=white)
+![PCA](https://img.shields.io/badge/Method-PCA-5B5FC7?style=flat-square)
+![Panel Regression](https://img.shields.io/badge/Model-Panel%20Regression-00897B?style=flat-square)
+![Data](https://img.shields.io/badge/Data-Restricted-orange?style=flat-square)
+![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)
+![Status](https://img.shields.io/badge/Release-Public%20Subset-brightgreen?style=flat-square)
+
+[项目简介](#项目简介) ·
+[代码说明](#代码说明) ·
+[数据说明](#数据说明) ·
+[快速开始](#快速开始) ·
+[许可证](#许可证)
+
+</div>
+
+---
+
+## 项目简介
+
+本仓库是论文中“基于 PCA 的市场情绪因子与 A 股反转效应实证分析”部分的公开整理版本。仓库仅保留可公开的分析代码、说明文档和部分公开结果，用于展示从情绪代理变量构建、主成分分析到回归检验的完整研究流程。
+
+> 本项目关注一个核心问题：市场情绪因子是否能够解释或预测 A 股市场中的收益反转效应。
+
+本项目主要支持以下任务：
+
+- 构建市场情绪因子 `PCAMS` 与扩展情绪因子 `exPCAMS`；
+- 对沪深 300 样本进行基准回归；
+- 对全 A 股样本进行稳健性回归；
+- 生成描述性统计、相关图表和统计检验结果；
+- 进行异质性回归分析；
+- 进行双重中介效应 bootstrap 检验。
+
+## 代码说明
 
 - `code/Get_PCAMS.py`
-  Standardizes the core sentiment proxies, runs PCA, and writes `PCAMS` and `exPCAMS`.
+  对核心情绪代理变量进行标准化处理，使用 PCA 构建 `PCAMS` 与 `exPCAMS`。
 - `code/Baseline.py`
-  Runs the CSI 300 baseline regressions and exports regression tables.
+  运行沪深 300 样本的基准回归，并导出回归结果表。
 - `code/Robust.py`
-  Runs the CSI All Share baseline regressions and exports regression tables.
+  运行全 A 股样本的稳健性回归，并导出回归结果表。
 - `code/Stats.py`
-  Produces descriptive statistics, charts, and selected statistical tests.
+  生成描述性统计、图表以及相关统计检验结果。
 - `code/heterogeneity.py`
-  Runs heterogeneity regressions based on quantile grid search.
+  基于分位数网格搜索进行异质性回归分析。
 - `code/mediation_bootstrap.py`
-  Runs the dual-mediator bootstrap analysis.
+  运行双重中介效应 bootstrap 检验。
 - `scripts/run_pipeline.py`
-  Runs the subset workflow from PCA construction through the later analysis scripts.
+  从 PCA 因子构建到后续分析脚本的简化流程入口。
 
-## Data Availability
+## 数据说明
 
-The following datasets are required to reproduce the full analysis, but they are
-not included in this public repository because of copyright and data licensing
-restrictions(or you can ask me for these by email_2029804134h@gmail.com):
+由于版权和数据许可限制，以下复现实证分析所需的 Excel 数据文件不随公开仓库提供：
 
 - `aggregateData/TS.xlsx`
-  Local input dataset for `Get_PCAMS.py`.
+  `Get_PCAMS.py` 所需的本地输入数据。
 - `aggregateData/TS_CSI_300_PCA.xlsx`
-  Local PCA dataset for the CSI 300 sample.
+  沪深 300 样本的 PCA 与回归数据。
 - `aggregateData/TS_CSI_ALL_PCA.xlsx`
-  Local PCA dataset for the CSI All Share sample.
+  全 A 股样本的 PCA 与回归数据。
 
-To run the scripts, place these files under `aggregateData/` in your local
-working copy. Publicly shareable derived outputs, such as selected CSV summaries
-and figures, may be kept in `aggregateData/` when they do not contain restricted
-source data.
+如需在本地复现完整流程，请将上述文件放入 `aggregateData/` 目录。公开仓库中仅保留不包含受限源数据的代码、说明文件和可公开结果。若需要相关数据，可通过邮件联系作者：`2029804134h@gmail.com`。
 
-## Repository Structure
+## 仓库结构
 
 ```text
 .
-|-- code/              Analysis scripts for the PCA sentiment section
-|-- scripts/           Optional workflow entry point
-|-- aggregateData/     Input and derived data for this section
-|-- docs/              Short publication notes
-|-- requirements.txt   Python dependencies
-|-- LICENSE            MIT License
-`-- README.md          Project overview
+|-- code/              PCA 市场情绪分析相关脚本
+|-- scripts/           可选的一键运行入口
+|-- aggregateData/     本地数据与可公开结果目录
+|-- docs/              数据布局与开源说明文档
+|-- requirements.txt   Python 依赖列表
+|-- LICENSE            MIT 开源许可证
+`-- README.md          项目说明
 ```
 
-## Quick Start
+## 快速开始
 
-Install dependencies:
+安装依赖：
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Run the subset workflow from the repository root:
+在仓库根目录运行简化流程：
 
 ```bash
 python scripts/run_pipeline.py
 ```
 
-Or run the scripts individually in this order:
+也可以按以下顺序分别运行脚本：
 
 1. `python code/Get_PCAMS.py`
 2. `python code/Baseline.py`
@@ -84,12 +104,14 @@ Or run the scripts individually in this order:
 5. `python code/heterogeneity.py`
 6. `python code/mediation_bootstrap.py`
 
-## Notes
+## 注意事项
 
-- This repository no longer includes the earlier raw-data construction scripts.
-- Word files generated during analysis are not tracked by default.
-- If you want the GitHub repository to display your real name in the license, replace the placeholder line in [LICENSE](LICENSE).
+- 本公开版本不包含早期原始数据清洗与构造脚本。
+- Word 格式的回归表和中介效应输出默认不纳入版本控制。
+- `aggregateData/` 中的受限 Excel 数据文件已通过 `.gitignore` 排除，不应提交到公开仓库。
+- 运行脚本前，请确认本地已准备好必要的数据文件，并且当前工作目录为仓库根目录。
 
-## License
+## 许可证
 
-This project is released under the [MIT License](LICENSE).
+本项目基于 [MIT License](LICENSE) 开源。
+MIT·作者：Shaopei Huang
